@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1095535334983",
+    "project_id": "test-84a72",
+    "storage_bucket": "test-84a72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095535334983:android:f067ed96ee3bd9c9898362",
+        "android_client_info": {
+          "package_name": "com.codanyon.spatula"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095535334983-tpibmd7glr481m5l0ssqb3neplk9c8ad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOrW4EPadki36d215ZnlvVCN9hPqvoST0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095535334983-tpibmd7glr481m5l0ssqb3neplk9c8ad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,50 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay" id="appMenu" #appMenu>
+      <ion-content>
+        <!-- <ion-list id="inbox-list"> -->
+        <div class="user-profile" *ngIf="shared.userData && shared.userData != null">
+          <div class="user-image" *ngIf="shared.userData.social_type=='facebook'"
+            style="background: url('http://graph.facebook.com/{{shared.userData.social_id}}/picture?type=large&width=100'); background-position: center;background-repeat: no-repeat;background-size: cover">
+          </div>
+          <div class="user-image" *ngIf="shared.userData.social_type!='facebook'"
+            style="background: url('{{shared.userData.profilePic}}'); background-position: center;background-repeat: no-repeat;background-size: cover">
+          </div>
+          <div>
+            <p>{{shared.userData.name}}</p>
+            <p>عضو/ة منذ {{shared.userData.created_at}}</p>
+          </div>
+        </div>
+        <!-- <ion-list-header>Inbox</ion-list-header>
+          <ion-note>hi@ionicframework.com</ion-note> -->
+
+        <!-- <ion-menu-toggle auto-hide="false"> -->
+        <div class="menu-body">
+          <ul>
+            <li (click)="openPage('/my-courses')"><img src="assets/icon/purchases.png" />
+              <p>الدورات المشتراه</p>
+            </li>
+            <li (click)="rateUs()"><img src="assets/icon/feedback.png" />
+              <p>شاركي رايك حول التطبيق</p>
+            </li>
+            <li (click)="shared.openHelp()"><img src="assets/icon/help.png" />
+              <p>المساعدة</p>
+            </li>
+            <li (click)="openPage('/my-downloads')"><img src="assets/icon/download.png" />
+              <p>تحميلاتى</p>
+            </li>
+            <li (click)="logout()"><img src="assets/icon/log-out.png" />
+              <p>تسجيل الخروج</p>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-footer">
+          <span style="font-size: 10px;">
+            <p>All copyrights reserved, Hanan Alabed</p>
+          </span>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

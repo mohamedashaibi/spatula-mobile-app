@@ -1,0 +1,40 @@
+<ion-header class="spatula-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <p style="direction: rtl">عملية شراء</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goBack()">
+        <ion-icon src="assets/img/backButton.svg" slot="icon-only" style="font-size:16px"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="purchase">
+    <div class="purchase-image"></div>
+    <ul>
+      <li><label>حول العملية</label>
+        <p>{{course.name}}</p>
+      </li>
+      <li><label>قيمة المبلغ</label>
+        <p> {{course.price}} دينار ليبي</p>
+      </li>
+    </ul>
+    <div class="purchase-phone">
+      <label>* رقم النقال </label>
+      <ion-input [(ngModel)]="phoneNumber" maxlength="10" placeholder="الرجاء ادخال رقم النقال 09xxxxxxxx" type="tel" ></ion-input>
+      <p *ngIf="(phoneNumber.length !=10 || !phoneNumber.startsWith('09'))  && check">يرجى ادخال رقم
+        النقال 10 ارقام تبدأ بـ 09 </p>
+      <button (click)="purchaseVideo()">شراء</button>
+    </div>
+  </div>
+</ion-content>
+
+<div class="help" (click)="shared.openLink('whats')">
+  <img src="assets/img/whatsapp.png" />
+  <p>للمساعدة. اضغطي هنا للتواصل عبر الواتساب.</p>
+</div>

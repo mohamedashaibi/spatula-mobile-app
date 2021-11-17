@@ -1,0 +1,7 @@
+<ion-slides #slider class="swiper-wrapper" [options]="slideOpts" pager="true"
+  *ngIf="shared.topSlider && shared.topSlider.length>0">
+  <ion-slide *ngFor="let slide of shared.topSlider" (click)="shared.openLink('{{slide.link}}')" class="swiper-slide"
+    style="background: url({{slide.pic}});background-size: cover;background-position: center;background-repeat: no-repeat">
+  </ion-slide>
+</ion-slides>
+<div class="swiper-pagination"></div>

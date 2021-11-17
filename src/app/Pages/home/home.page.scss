@@ -1,0 +1,38 @@
+* {
+    font-family: 'bdavat';
+}
+
+.fab {
+    position     : absolute;
+    left         : 0px;
+    position     : absolute;
+    width        : 60px;
+    height       : 60px;
+    border-radius: 50%;
+    --background : #fc96ab;
+    box-shadow   : -2px 5px 3px rgb(0 0 0 / 36%);
+    color        : #ffffff;
+    text-align   : center;
+    bottom       : 105px;
+    z-index      : 4242;
+
+    ion-icon {
+        font-size  : 42px;
+        font-family: 'bdavat';
+        font-weight: bolder;
+    }
+}
+
+.backdiv {
+    height    : 100px;
+    background: black;
+}
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+
+}

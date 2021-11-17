@@ -1,0 +1,59 @@
+<!-- <div class="spatula-header" >
+  <div (click)="goBack()"><img src="assets/img/backButton.svg" /></div>
+  <p>الدورات المجانية</p>
+
+</div> -->
+<ion-header class="spatula-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <p>الدورات المجانية</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goBack()">
+        <ion-icon src="assets/img/backButton.svg" slot="icon-only" style="font-size:16px"></ion-icon>
+      </ion-button>
+      <!-- <div ><img src="assets/img/backButton.svg" /></div> -->
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="loading" class="loading">
+    <app-loading></app-loading>
+  </div>
+  <div class="body-holder" style="height:160px" *ngIf="!loading">
+    <div class="section-1" style="height:100%">
+      <div class="swiper-container top-swiper">
+        <app-sildes></app-sildes>
+        <!-- Add Pagination -->
+      </div>
+    </div>
+  </div>
+  <div style="top:230px; margin-bottom: 50px" *ngIf="!loading">
+    <ion-item class="recipe-card" lines="none" *ngFor="let course of courses" (click)="goToCourse(course.id)">
+      <ion-thumbnail slot="start">
+        <img src="{{course.pic}}">
+      </ion-thumbnail>
+      <!-- <div slot="start" *ngIf="course.pic"
+        style="background: url('{{course.pic}}'); background-position: center;background-repeat: no-repeat;background-size: cover">
+
+      </div> -->
+      <div>
+        <p>{{course.name}}</p>
+        <p>محتوى مجاني</p>
+      </div>
+      <label slot="end">المزيد</label>
+    </ion-item>
+
+  </div>
+</ion-content>
+<div class="help" (click)="shared.openLink('whats')">
+  <img src="assets/img/whatsapp.png" />
+  <p>للمساعدة. اضغطي هنا للتواصل عبر الواتساب.</p>
+</div>

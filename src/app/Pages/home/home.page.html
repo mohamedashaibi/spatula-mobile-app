@@ -1,0 +1,85 @@
+<ion-header class="spatula-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <p>الرئيسية</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="loading" class="loading">
+    <app-loading></app-loading>
+  </div>
+  <div class="body-holder" *ngIf="!loading && shared.topSlider && shared.topSlider.length>0">
+    <div class="section-1">
+      <div class="swiper-container top-swiper">
+        <app-sildes></app-sildes>
+        <!-- <ion-slides #slider class="swiper-wrapper" [options]="slideOpts" pager="true" >
+          <ion-slide class=" swiper-slide" *ngFor="let slide of shared.topSlider"
+          style="background: url({{slide.pic}});background-size: cover;background-position: center;background-repeat: no-repeat"
+          (click)="shared.openLink(slide.link)">
+          </ion-slide>
+        </ion-slides> 
+        <div class="swiper-pagination"></div>-->
+        <!-- Add Pagination -->
+      </div>
+    </div>
+    <div class="section-2">
+      <div class="row">
+        <div class="col col-50">
+          <div (click)="paidCourses()" style="right: 40%;">
+            <p>الدورات المميزة</p>
+          </div>
+        </div>
+        <div class="col col-50">
+          <div (click)="freeCourses()" style="left: 40%;">
+            <p>الدورات المجانية</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-3">
+      <div class="swiper-container bottom-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let slide of shared.bottomSlider"
+            (click)="shared.openLink('{{slide.link}}')"
+            style="background: url('{{slide.pic}}');background-size: cover;background-position: center;background-repeat: no-repeat">
+
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <!-- Add Pagination -->
+      </div>
+    </div>
+  </div>
+  <div class="float-section" id="floatsection" #floatsection>
+    <div (click)="freeCourses()">الدورات المجانية</div>
+    <div (click)="paidCourses()">الدورات المميزة</div>
+  </div>
+  <div class="backgorund-overlay" (click)="closeMenu()" id="backgorundoverlay" #backgorundoverlay></div>
+  <!-- <button >
+    <p>+</p>
+  </button> -->
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed" edge
+    *ngIf="!loading && shared.topSlider && shared.topSlider.length>0">
+    <ion-fab-button class="fab" (click)="openFloat()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="help facebook-help" *ngIf="!loading && shared.topSlider && shared.topSlider.length>0">
+    <img src="assets/img/logo.png" />
+    <img src="assets/img/logo.png" />
+    <img src="assets/img/logo.png" />
+  </div>
+
+</ion-content>
+
+<div class="help" (click)="shared.openLink('whats')">
+  <img src="assets/img/whatsapp.png" />
+  <p>للمساعدة. اضغطي هنا للتواصل عبر الواتساب.</p>
+</div>

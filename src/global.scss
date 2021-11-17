@@ -1,0 +1,120 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+*{
+  font-family: 'bdavat';
+}
+
+.vtc-popup .popup {
+    border-radius: 25px;
+    width: 80%;
+    max-width: 430px;
+    min-width: 300px;
+    background: #ffffff;
+    padding-top: 10px;
+    font-family: "HelveticaNeue";
+  }
+  .vtc-popup .popup-body {
+    text-align: center;
+    font-family: "HelveticaNeue";
+  }
+  .vtc-popup .popup-body span {
+    text-align: center;
+    font-size: 16px;
+    font-family: "HelveticaNeue";
+    padding-bottom: 30px;
+    display: block;
+  }
+  .vtc-popup .popup-head {
+    border-bottom: none;
+    font-family: "bdavat";
+  }
+  .vtc-popup input {
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.16);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 47px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #777777;
+    border: solid 1px #707070;
+    height: 48px;
+    direction: rtl;
+    font-family: "HelveticaNeue";
+  }
+  
+  .vtc-popup .popup-buttons {
+    border-top: solid 1px #f3f3f3;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .vtc-popup .popup-buttons button {
+    --color: #fc96ab;
+    --background: transparent;
+    font-size: 25px;
+  
+    font-family: "bdavat";
+  }
+  .vtc-popup .popup-title {
+    color: #fc96ab;
+    font-size: 25px;
+    font-family: "bdavat";
+  }
+  
+  ion-spinner{
+    --color: #fc96ab;
+  }
+  .loading {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+.my-custom-class {
+  --background: #fff;
+  --spinner-color: #fc96ab;
+
+  color: #222;
+}
+
+.error-toast{
+  --background: #ff6889;
+}
+
+.alert-title.sc-ion-alert-md {
+  color: #fc98ad;
+  font-size: 20px;
+  font-weight: 500;
+}
+.alert-button.sc-ion-alert-md {
+  color: #fc98ad;
+  text-align: center;
+}

@@ -1,0 +1,115 @@
+<ion-header class="spatula-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <p style="direction: rtl">طريقة التحضير الرائعة!</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goBack()">
+        <ion-icon src="assets/img/backButton.svg" slot="icon-only" style="font-size:16px"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="loading" class="loading">
+    <app-loading></app-loading>
+  </div>
+  <div class="body-holder" style="height:250px" *ngIf="!loading && recipe_data">
+    <div class="section-1" style="height:100%">
+      <div (click)="playVideo()" class="play-button" #playbutton *ngIf="!movie.play"
+        style="background: url({{recipe_data?.image[0].image}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+        <img src="assets/img/play.png">
+      </div>
+      <video id="video_1" class="vjs-tech" autoplay controls preload="auto" style="width: 100%;height: 220px;"
+        [hidden]="!movie.play" poster="assets/img/logo.png" data-setup="{}" [src]="trustSrc(movie.src)">
+        <div id="placeholder_1" class="placeholder">
+          <div class="loader">جار التحميل ... </div>
+        </div>
+
+      </video>
+      <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+
+    </div>
+  </div>
+  <div *ngIf="!loading">
+    <ion-buttons *ngIf="!loading">
+      <ion-button (click)="ask()" *ngIf="!exist && !startDownload" style="    color: #fc96ab;">
+        <ion-icon name="download" slot="start"></ion-icon>
+        تحميل
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-item *ngIf="startDownload">
+          <ion-label style="color: #fc96ab;">
+            جار التحميل
+          </ion-label>
+          <ion-label style="color: #fc96ab;" slot="end">
+            {{downloadProgress}} %
+          </ion-label>
+          <ion-spinner slot="end"></ion-spinner>
+        </ion-item> -->
+  </div>
+  <!--   
+  <ion-progress-bar class="download" color="secondary" value="{{downloadProgress}}" *ngIf="startDownload">
+  </ion-progress-bar> -->
+  <div class="video-title" *ngIf="recipe_data && movie.load">
+    <p>{{recipe_data?.title}}</p>
+    <p>{{recipe_data?.subtitle}}</p>
+    <p>فيديو مدته {{recipe_data?.duration}} دقيقة و مساحته {{recipe_data?.video_size}} ميجابايت</p>
+  </div>
+  <div class="video-body" *ngIf="!loading && recipe_data">
+    <div id="div1" (click)="divsOpen('div1')">
+      <label>نبذة عن الفيديو والمحتوى</label>
+      <p [innerHtml]="recipe_data?.description"> </p>
+      <img src="assets/img/angle-arrow-down.svg" />
+    </div>
+    <div id="div2" (click)="divsOpen('div2')" *ngIf="recipe_data?.warning">
+      <label>تحذيرات اثناء اعداد هذه الوصفة</label>
+      <p [innerHtml]="recipe_data?.warning"> </p>
+      <img src="assets/img/angle-arrow-down.svg" />
+    </div>
+    <div id="div3" (click)="divsOpen('div3')" *ngIf="recipe_data?.ingredient">
+      <label>المقادير المستخدمة</label>
+      <p [innerHtml]="recipe_data?.ingredient"> </p>
+      <img src="assets/img/angle-arrow-down.svg" />
+    </div>
+    <div id="div4" (click)="divsOpen('div4')" *ngIf="recipe_data?.image.length > 0">
+      <label>معرض الصور </label>
+      <div *ngFor="let image of recipe_data?.image">
+        <div (click)="openFullScreen()" *ngIf="image.image"
+          style="background: url('{{image.image}}');background-repeat: no-repeat;background-position: center;background-size: cover;">
+        </div>
+      </div>
+
+      <img src="assets/img/angle-arrow-down.svg" />
+    </div>
+  </div>
+  <!-- </ion-content> -->
+  <div class="preview-gallery" *ngIf="!loading && recipe_data">
+    <div class="close-button" (click)="closeFullScreen()"><img src="assets/img/close.svg" /></div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let image of recipe_data?.image">
+          <div class="swiper-zoom-container" *ngIf="image.image">
+            <img src="{{image.image}}">
+          </div>
+        </div>
+
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</ion-content>
+<div class="help" (click)="shared.openLink('whats')">
+  <img src="assets/img/whatsapp.png" />
+  <p>للمساعدة. اضغطي هنا للتواصل عبر الواتساب.</p>
+</div>

@@ -1,0 +1,52 @@
+<ion-header class="spatula-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <p>الدورات المشتراة</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goBack()">
+        <ion-icon src="assets/img/backButton.svg" slot="icon-only" style="font-size:16px"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content style="margin-bottom: 50px">
+  <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="loading" class="loading">
+    <app-loading></app-loading>
+  </div>
+  <div class="body-holder" style="height:160px" *ngIf="!loading">
+    <div class="section-1" style="height:100%">
+      <div class="swiper-container top-swiper">
+        <app-sildes></app-sildes>
+        <!-- Add Pagination -->
+      </div>
+    </div>
+  </div>
+  <ion-item class="recipe-card" lines="none" (click)="goToCourse(order.course.id)" *ngFor="let order of myOrders">
+    <!-- <div
+      style="background: url('{{order.course.pic}}'); background-position: center;background-repeat: no-repeat;background-size: cover">
+    </div> -->
+    <ion-thumbnail slot="start">
+      <img src="{{order.course.pic}}">
+    </ion-thumbnail>
+    <div>
+      <p>{{order.course.name}}</p>
+      <p>{{order.course.price}} دينار ليبي </p>
+    </div>
+    <label slot="end">المزيد</label>
+  </ion-item>
+  <div class="no-courses-avilable" *ngIf="!myOrders.length && !loading">
+    لم يتم شراء اي مواد تعليمية في الوقت الحالي !
+  </div>
+</ion-content>
+
+<div class="help" (click)="shared.openLink('whats')">
+  <img src="assets/img/whatsapp.png" />
+  <p>للمساعدة. اضغطي هنا للتواصل عبر الواتساب.</p>
+</div>

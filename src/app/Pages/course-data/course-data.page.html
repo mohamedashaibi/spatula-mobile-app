@@ -1,0 +1,72 @@
+<ion-header class="spatula-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <p *ngIf="course">{{course.name}}</p>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goBack()">
+        <ion-icon src="assets/img/backButton.svg" slot="icon-only" style="font-size:16px"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="loading" class="loading">
+    <app-loading></app-loading>
+  </div>
+  <div class="body-holder" style="height:160px" *ngIf="!loading">
+    <div *ngIf="course &&course.pic"
+      style="height:100%;background: url({{course.pic}});background-size: cover;background-position: center;background-repeat: no-repeat">
+    </div>
+    <!-- <div style="height:100%;background: url('img/info.png');background-size: cover;background-position: center;background-repeat: no-repeat"></div> -->
+    <!--<div class="section-1" style="height:100%">
+      <div class="swiper-container top-swiper">
+        <div class="swiper-wrapper">
+          <div (click)="openLink('{{slide.link}}')"  class="swiper-slide" style="background: url('{{slide.pic}}');background-size: cover;background-position: center;background-repeat: no-repeat"  ng-repeat="slide in topSlider" end-repeat>
+
+          </div>
+        </div>
+        &lt;!&ndash; Add Pagination &ndash;&gt;
+      </div>
+    </div>-->
+  </div>
+  <div *ngIf="!loading && course" style="margin-bottom:45px;">
+    <div class="course-description" *ngIf="course">
+      <p>الوصف</p>
+      <p>{{course.description}}</p>
+    </div>
+    <ion-item class="recipe-card" lines="none" (click)="goToRecipe(recipe.id)" *ngFor="let recipe of course.videos">
+      <!-- <div
+        style="background: url('{{recipe.pic}}'); background-position: center;background-repeat: no-repeat;background-size: cover">
+
+      </div> -->
+      <ion-thumbnail slot="start">
+        <img src="{{recipe.pic}}">
+      </ion-thumbnail>
+      <div>
+        <p>{{recipe.title}}</p>
+        <p>{{recipe.subtitle}}</p>
+      </div>
+      <label slot="end">المزيد</label>
+    </ion-item>
+    <div class="course-description" *ngIf="!course.paid && course">
+      <p>ثمن الشراء </p>
+      <p>{{course.price}} دينار ليبي </p>
+    </div>
+    <div class="course-description" *ngIf="!course.paid && course.howTo">
+      <p>كيفية الشراء</p>
+      <p>{{course.howTo}}</p>
+    </div>
+    <p class="purchase-button" *ngIf="!course.paid && course" (click)="goToPurchase()"> شراء</p>
+  </div>
+</ion-content>
+<div class="help" (click)="shared.openLink('whats')">
+  <img src="assets/img/whatsapp.png" />
+  <p>للمساعدة. اضغطي هنا للتواصل عبر الواتساب.</p>
+</div>
