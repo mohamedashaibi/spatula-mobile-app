@@ -1,0 +1,1 @@
+(self.webpackChunkSpatulalatest=self.webpackChunkSpatulalatest||[]).push([[9781],{9781:(a,t,e)=>{"use strict";e.r(t),e(9738)}}]);

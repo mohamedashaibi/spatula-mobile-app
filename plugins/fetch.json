@@ -1,0 +1,131 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@^1.3.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-statusbar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-statusbar@2.4.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device@2.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-splashscreen": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-splashscreen@5.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-ionic-webview": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ionic-webview@^4.0.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+    }
+  },
+  "cordova-plugin-facebook-connect": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-facebook-connect@^2.3.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "APP_ID": "503611874397394",
+      "APP_NAME": "Spatula"
+    }
+  },
+  "cordova-plugin-ionic-keyboard": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ionic-keyboard@^2.0.5"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-androidx": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-androidx@^3.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-androidx-adapter": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-androidx-adapter@^1.1.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-file": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file@^6.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-file-transfer": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file-transfer@^1.7.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "twitter-connect-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "github:chroa/twitter-connect-plugin"
+    },
+    "is_top_level": true,
+    "variables": {
+      "TWITTER_KEY": "iLk4jzQL5MQU0tjEdPCH7fe2a",
+      "TWITTER_SECRET": "xtGvfqA9bF47r3icl2MlfwB9CwqNKOBh8Rswx9OANodGd5PEMM",
+      "FABRIC_KEY": "iiiiiiiiiiiiiiiiiiiiiii"
+    }
+  },
+  "com.ourcodeworld.preventscreenshots": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/sdkcarlos/cordova-ourcodeworld-preventscreenshots.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-market": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-market@^1.2.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-advanced-http": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-advanced-http@^3.1.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

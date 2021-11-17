@@ -1,0 +1,67 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.ourcodeworld.preventscreenshots": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-facebook-connect": {
+      "APP_ID": "503611874397394",
+      "APP_NAME": "Spatula",
+      "FACEBOOK_URL_SCHEME_SUFFIX": " ",
+      "FACEBOOK_AUTO_LOG_APP_EVENTS": "true",
+      "FACEBOOK_HYBRID_APP_EVENTS": "false",
+      "FACEBOOK_ADVERTISER_ID_COLLECTION": "true",
+      "FACEBOOK_ANDROID_SDK_VERSION": "9.1.1",
+      "FACEBOOK_IOS_SDK_VERSION": "9.2.0",
+      "FACEBOOK_BROWSER_SDK_VERSION": "v9.0",
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-market": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    },
+    "twitter-connect-plugin": {
+      "FABRIC_KEY": "iiiiiiiiiiiiiiiiiiiiiii",
+      "TWITTER_KEY": "iLk4jzQL5MQU0tjEdPCH7fe2a",
+      "TWITTER_SECRET": "xtGvfqA9bF47r3icl2MlfwB9CwqNKOBh8Rswx9OANodGd5PEMM",
+      "PACKAGE_NAME": "com.codanyon.spatula"
+    }
+  },
+  "dependent_plugins": {}
+}
